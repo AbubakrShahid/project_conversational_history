@@ -1,15 +1,20 @@
-<nav class="bg-[#343088] p-4 text-white">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold">PCH</h1>
-
-      <div class="space-x-4">
-        <% if current_user.present? %>
-          <%= link_to "View Projects", projects_path, class: "hover:underline" %>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "hover:underline" %>
-        <% else %>
-          <%= link_to "Log in", new_user_session_path, class: "hover:underline" %>
-          <%= link_to "Sign up", new_user_registration_path, class: "hover:underline" %>
-        <% end %>
-      </div>
+<nav class="bg-white shadow-md p-6 mb-2">
+  <div class="container mx-auto flex justify-between items-center gap-6">
+    <div>
+      <h1 class="text-3xl font-extrabold tracking-wide text-[#343088]">Abu Bakar's Project Hub</h1>
+      <p class="text-sm text-gray-600 mt-2">
+        Welcome to your Project Management Tool — streamline your workflow, track progress, and stay organized.
+      </p>
     </div>
-  </nav>
+
+    <div class="space-x-4">
+      <% if current_user.present? %>
+      <%= link_to "View Projects", projects_path, class: "bg-[#343088] text-white px-4 py-2 rounded-lg hover:bg-[#2b276a] transition" %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "bg-gray-100 font-semibold py-2 px-4" %>
+      <% else %>
+      <%= link_to "Log in", new_user_session_path, class: "bg-gray-100 font-semibold py-2 px-4" %>
+      <%= link_to "Sign up", new_user_registration_path, class: "bg-gray-100 font-semibold py-2 px-4" %>
+      <% end %>
+    </div>
+  </div>
+</nav>
